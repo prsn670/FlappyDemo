@@ -1,0 +1,40 @@
+I just wanted to put notes here that didn't really fit as a comment to a particlar code, but is proably something useful to remember:
+
+-Two important links:
+ https://libgdx.badlogicgames.com/nightlies/docs/api/allclasses-noframe.html
+ http://docs.oracle.com/javase/7/docs/api/allclasses-noframe.html
+
+-The LibGDX default directory is in the assets folder
+
+-The procedure for updating a file on github that more two people are working on should be the below:
+
+	-pull the file
+	-edit it
+	-commit it(it commits to your local repository)
+	-pull it again (if there are any conflict you will Be notified) in that case you can solve it executing the below command(GitBash on your repository working folder):
+
+	-git mergetool
+		it will run the merging tool you got configured in your .gitconfig file
+		after that you can push your changes
+
+-Because SpriteBatch is considered a container for everything we need to be rendered to a screen. You "open" the box using .begin() method, place items inside, close the box, and then the box uses
+ what's inside to render those items. The SpriteBatch methods we use are .draw(texture, x-coord, y-coord, screen width, screen height) method to draw the texture on the screen. .end() method to close the box.
+ 
+-Each state should have a public abstract void method dispose to dispose of texutures or other media we aren't using to avoid memory leaks.
+ To be more clear, our State class has a public abstract void method named dispose, the other classes that extend State (inherit from State) should have an overridden method public void dispose().
+
+-Texture is a class from LibGDX.
+ Link here: https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html
+
+-final is a keyword in Java. For our purposes it looks like it used with a variable. A final variable can only be initialized in the constructor and then
+ becomes static. If you declare a static final variable then it must be initialized when you define it. Link: http://www.javatpoint.com/final-keyword 
+
+-the methods create, dispose, pause render, resize, and resume are all methods of the ApplicationAdapter class.
+
+-dispose() - is a method of the Disposable Interface. It releases all resources of that object. In this game, when we pop something off of the stack,
+ or are simply not using some resource anymore we dispose of it to prevent memory leaks.
+
+-update() Remember that update will update everything, so all of the math and logic goes in the update method.
+
+-There is a difference in what LibGDX considers a sound file and music file. Sound file is loaded into RAM and Music is streamed from the disk.
+ So short clips can be sounds and longer sounds should be a music file.
