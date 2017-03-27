@@ -88,7 +88,7 @@ public class PlayState extends State {
         cam.position.x = bird.getPosition().x + 80;
 
         /*viewportWidth is a variable in the setToOrtho method of class OrthoGraphicCamera.
-         * This is an enhanced for loop. It initializes an object of type Tube that iterates through the array
+         * Iterates through the array of
          * tubes, which is just an array of classes Tube.*/
         for(int i = 0; i < tubes.size; i++)
         {

@@ -30,7 +30,7 @@ public class Tube {
 
     /* Argument in method is where the tube will start on the x-axis.*/
     public Tube(float x) {
-        topTube = new Texture("topTube.png");
+        topTube = new Texture("toptube.png");
         bottomTube = new Texture("bottomtube.png");
         rand = new Random();
 
